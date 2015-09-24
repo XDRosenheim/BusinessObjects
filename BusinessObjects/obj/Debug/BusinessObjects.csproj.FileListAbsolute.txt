@@ -20,3 +20,7 @@ C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\bin\System.W
 C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\obj\Debug\BusinessObjects.csprojResolveAssemblyReference.cache
 C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\obj\Debug\BusinessObjects.dll
 C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\obj\Debug\BusinessObjects.pdb
+C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\bin\EntityFramework.dll
+C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\bin\EntityFramework.SqlServer.dll
+C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\bin\EntityFramework.xml
+C:\Users\HVF-E308\Desktop\Rosenheim\BusinessObjects\BusinessObjects\bin\EntityFramework.SqlServer.xml

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using BusinessLayer;
@@ -16,40 +15,39 @@ namespace BusinessObjects.Controllers
             return View(employees);
         }
 
-        /*        */
+        /**********/
         /* CREATE */
-        /*        */
+        /**********/
         [HttpGet]
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult Create_Get()
         {
             return View();
         }
 
         [HttpPost]
-        //public ActionResult Create(string Name, string City, string Gender, DateTime DateOfBirth)
-        //public ActionResult Create(Employee employee)
-        public ActionResult Create(FormCollection formCollection)
+        [ActionName("Create")]
+        public ActionResult Create_Post()
         {
-            Employee employee = new Employee
+            Employee employee = new Employee();
+            TryUpdateModel(employee);
+
+            if (ModelState.IsValid)
             {
-                Name = formCollection["Name"],
-                City = formCollection["City"],
-                Gender = formCollection["Gender"],
-                DateOfBirth = Convert.ToDateTime(formCollection["DateOfBirth"])
-            };
-
-            Session["Message"] = employeeBusinessLayer.AddEmployee(employee) ? "Success!" : "Failed!";
-
-            return RedirectToAction("Index");
+                EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+                employeeBusinessLayer.AddEmployee(employee);
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
-        /*      */
+        /********/
         /* EDIT */
-        /*      */
+        /********/
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            Employee employee = employeeBusinessLayer.Employees.Single(emp => emp.ID == id);
+            Employee employee = employeeBusinessLayer.Employees.Single(emp => emp.Id == id);
             return View(employee);
         }
 
@@ -64,11 +62,10 @@ namespace BusinessObjects.Controllers
             return View();
         }
 
-        /*        */
+        /**********/
         /* DELETE */
-        /*        */
-
-        [HttpGet]
+        /**********/
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             employeeBusinessLayer.DeleteEmployee(id);

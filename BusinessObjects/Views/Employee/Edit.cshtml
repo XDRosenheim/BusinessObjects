@@ -1,14 +1,13 @@
 ﻿@model BusinessLayer.Employee
 
 @{
-    Layout = null;
+    Layout = "~/Models/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width"/>
     <title>Edit</title>
 </head>
@@ -23,7 +22,7 @@
         <fieldset>
             <legend>Employee</legend>
     
-            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.Id)
     
             <div class="editor-label">
                 @Html.LabelFor(model => model.Name)

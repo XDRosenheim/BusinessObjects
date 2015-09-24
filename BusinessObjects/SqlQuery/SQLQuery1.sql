@@ -36,7 +36,7 @@ Begin
 End
 go
 
-Create procedure spAddEmployee
+Alter procedure spAddEmployee
 @Name nvarchar(50) = null,
 @Gender nvarchar(10) = null,
 @City nvarchar(50) = null,

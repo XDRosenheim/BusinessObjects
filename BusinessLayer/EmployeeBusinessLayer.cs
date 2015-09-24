@@ -24,7 +24,7 @@ namespace BusinessLayer
                     {
                         Employee employee = new Employee()
                         {
-                            ID = Convert.ToInt32(sqlDataReader["Id"]),
+                            Id = Convert.ToInt32(sqlDataReader["Id"]),
                             Name = Convert.ToString(sqlDataReader["Name"]),
                             Gender = Convert.ToString(sqlDataReader["Gender"]),
                             City = Convert.ToString(sqlDataReader["City"]),
@@ -72,7 +72,7 @@ namespace BusinessLayer
 
                 sqlCommand.Parameters.AddRange(new SqlParameter[]
                 {
-                    new SqlParameter("@Id", employee.ID), 
+                    new SqlParameter("@Id", employee.Id), 
                     new SqlParameter("@Name", employee.Name),
                     new SqlParameter("@City", employee.City),
                     new SqlParameter("@Gender", employee.Gender),
